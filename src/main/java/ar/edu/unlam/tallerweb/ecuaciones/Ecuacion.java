@@ -9,10 +9,10 @@ public interface Ecuacion {
 
 	/**
 	 * Devuelve el resultado de evaluar f(x)
-	 * 
+	 *
 	 * @param x la variable
-	 * 
+	 *
 	 */
-	public Double resolver(Double x);
-	
+	Double resolver(Double x);
+
 }
