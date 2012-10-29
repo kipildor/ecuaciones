@@ -1,4 +1,4 @@
-# Ecuaciones
+# Ecuaciones y sumas de Riemann
 
 ## Consigna
 El ejercicio plantea la necesidad de resolver ecuaciones polinómicas y el cálculo de áreas bajo las curvas por el metodo de las [sumas de Riemann](http://es.wikipedia.org/wiki/Suma_de_Riemann).
