@@ -16,13 +16,17 @@ y la interfaz
 
 Note que tanto la EcuacionLineal como la EcuacionCuadratica son casos particulares de la EcuacionPolinomica, con lo cual el resultado de de evaluar 
 
+```java
 	Ecuacion lineal = new EcuacionLineal(2.0, 1.0);
 	lineal.resolver(2.0);
+```
 
 Debería ser igual a 
 
+```java
 	Ecuacion polinomica = new EcuacionPolinomica(Arrays.toList(new Double[] {1.0, 2.0})) 
 	polinomica.resolver(2.0);
+```
 
 ## Consideraciones
 
