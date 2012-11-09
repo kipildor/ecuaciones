@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,10 @@ import java.util.List;
  * f(x) = n + (n-1) Ã— x + (n-2) Ã— x^2 + ...
  *
  */
-public class EcuacionPolinomica implements Ecuacion {
+public class EcuacionPolinomica implements Ecuacion
+{
+	private List<Double> coeficientes = new ArrayList<Double>();
+	private Double y = 0.0;
 
 	/**
 	 * Constructor parametrizado
@@ -26,22 +30,76 @@ public class EcuacionPolinomica implements Ecuacion {
 	 * f(x) = 1 Ã— x^0 + 0 Ã— x^1 + 2 Ã— x^2 + 1 Ã— x^3 - 1 Ã— x^4
 	 *
 	 */
-	public EcuacionPolinomica(List<Double> coeficientes) {
-
-		throw new RuntimeException("No implementado");
-
+	public EcuacionPolinomica(List<Double> coeficientes)
+	{
+		super();
+		this.coeficientes = coeficientes;
+		//throw new RuntimeException("No implementado");
 	}
+	
+/**
+	Definimos una ArrayList
+	List<String> list = new ArrayList<String>();
+	
+	 Añadimos elementos
+	list.add("Andrea");
+	list.add("Amaya");
+	list.add("Julio");
 
+	 Obtenemos un Iterador y recorremos la lista.
+		el método hasNext() nos dice si hay más elementos y que el método .next() nos permite movernos al siguiente elemento.	
+	Iterator iter = list.iterator();
+	while (iter.hasNext())
+	  System.out.println(iter.next());
+	}	
+*/
 	/**
 	 * Devuelve el resultado de evaluar f(x)
 	 *
 	 * @param x la variable
 	 *
 	 */
-	public Double resolver(Double x) {
+	public Double resolver(Double x)
+	{
+		y = 0.0;
+		
+		Double valorActual = 0.0;
+		
+		//System.out.println("Cantidad de elementos: "+coeficientes.size());
+		
+		int exponente = coeficientes.size() - 1;
+		
+		for(int i = 0; i < coeficientes.size(); i++)
+		{
+			valorActual = coeficientes.get(i);
 
-		throw new RuntimeException("No implementado");
+			y = y + (valorActual * (Elevar(x, exponente)));
+			
+			//System.out.println("Iteracion numero: "+ i +" X:"+x+"  valor: "+ valorActual+" exponente:"+exponente+" y: "+ y);
+			
+			/*
+			for(int j = 0; j < i; j++)
+			{
+				y = y + (valorActual * x);
+			}
+			*/
+			exponente--;
+		}
 
+		return y;
+		//throw new RuntimeException("No implementado");
+	}
+	
+	public Double Elevar(Double x, int exponente)
+	{
+		Double resultado = 1.0;
+		
+		for(int i = 0; i < exponente; i++)
+		{
+			resultado = resultado * x; 
+		}
+		
+		return resultado;
 	}
 
 }
