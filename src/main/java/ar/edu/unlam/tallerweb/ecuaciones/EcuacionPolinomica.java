@@ -67,13 +67,14 @@ public class EcuacionPolinomica implements Ecuacion
 		
 		//System.out.println("Cantidad de elementos: "+coeficientes.size());
 		
-		int exponente = coeficientes.size() - 1;
+		//int exponente = coeficientes.size() - 1;	primer linea para recorrer al revez
 		
 		for(int i = 0; i < coeficientes.size(); i++)
 		{
 			valorActual = coeficientes.get(i);
 
-			y = y + (valorActual * (Elevar(x, exponente)));
+			//y = y + (valorActual * (Elevar(x, exponente)));	segunda linea
+			y = y + (valorActual * (Elevar(x, i)));
 			
 			//System.out.println("Iteracion numero: "+ i +" X:"+x+"  valor: "+ valorActual+" exponente:"+exponente+" y: "+ y);
 			
@@ -83,7 +84,7 @@ public class EcuacionPolinomica implements Ecuacion
 				y = y + (valorActual * x);
 			}
 			*/
-			exponente--;
+			//exponente--;	tercer linea
 		}
 
 		return y;

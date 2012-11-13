@@ -3,6 +3,7 @@ package ar.edu.unlam.tallerweb.ecuaciones;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -140,6 +141,45 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 	{
 		List <Double> datos = new ArrayList<Double>();
 		
+		datos.add(10.0);
+		datos.add(0.0);
+		datos.add(-6.0);
+		datos.add(3.0);
+		datos.add(0.0);
+		datos.add(1.0);
+		
+		Ecuacion ecuacion = new EcuacionPolinomica(datos);
+	
+		IntegralDeArea integral = new IntegralDeArea();
+		Double incremento = 0.25;
+		Double areaObtenida = integral.calcular(ecuacion, 3.0, 4.0, incremento);
+	
+	
+		Double precision = 0.01;
+		Double areaEsperada = 633.23;
+		
+		assertEquals("Se espera que el área bajo la recta identidad entre 3 y 4 sea 633.23 ",
+		areaEsperada, areaObtenida.doubleValue(), precision);
+	}
+	
+	@Test
+	public void areaBajoLaIdentidad6()
+	{
+		Double puntoLineal = 0.0;
+		Double puntoPolinomica = 0.0;
+		
+		Ecuacion lineal = new EcuacionLineal(2.0, 1.0);
+		puntoLineal = lineal.resolver(2.0);
+		
+		Ecuacion polinomica = new EcuacionPolinomica(Arrays.asList(new Double[] {1.0, 2.0}));
+		puntoPolinomica = polinomica.resolver(2.0);
+		
+		assertEquals("Se espera que el valor de sea igual calculado de las 2 formas ",
+				puntoLineal, puntoPolinomica, 0.01);
+		//System.out.println("Punto Lineal: "+ puntoLineal +" ,  punto Polinomica: "+ puntoPolinomica);
+		/*
+		List <Double> datos = new ArrayList<Double>();
+		
 		datos.add(1.0);
 		datos.add(0.0);
 		datos.add(3.0);
@@ -159,6 +199,6 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		
 		assertEquals("Se espera que el área bajo la recta identidad entre 3 y 4 sea 633.23 ",
 		areaEsperada, areaObtenida.doubleValue(), precision);
+		*/
 	}
-
 }
