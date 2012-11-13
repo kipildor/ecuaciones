@@ -18,7 +18,7 @@ public class IntegralDeArea
 	 * @param incremento
 	 * @return el área bajo la curva
 	 */
-	public Double calcular(Ecuacion ecuacion, Double inicio, Double fin, Double incremento)
+	public Double calcular(Ecuacion ecuacion,Double inicio,Double fin,Double incremento)
 	{
 		Double areaIzq = 0.0;
 		Double areaDer = 0.0;
@@ -50,6 +50,11 @@ public class IntegralDeArea
 		//System.out.println("Area por la der: "+areaDer);
 		
 		areaTotal = ((areaDer + areaIzq) / 2);
+		
+		if(areaTotal < 0)
+		{
+			areaTotal *= -1;
+		}
 
 		//System.out.println("Areaizq:"+ areaIzq+" AreaDer: "+areaDer+" total:"+areaTotal+" inicio:"+inicio+" fin:"+fin);
 		return areaTotal;
