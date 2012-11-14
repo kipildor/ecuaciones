@@ -201,4 +201,37 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		areaEsperada, areaObtenida.doubleValue(), precision);
 		*/
 	}
+	
+	@Test
+	public void areaBajoLaIdentidad7()
+	{
+		Ecuacion lineal = new EcuacionLineal(1.0, -1.0);
+		
+		IntegralDeArea integral = new IntegralDeArea();
+		
+		Double incremento = 0.01;
+		Double areaObtenida = integral.calcular(lineal, 0.00, 2.00, incremento);
+		Double precision = 0.01;
+		
+		//System.out.println("El area de y=x-1 es: "+ areaObtenida);
+		assertEquals("Se espera que el valor del area sea igual a 1 ",
+			areaObtenida, 1.00, precision);
+	}
+	
+	@Test
+	public void areaBajoLaIdentidad8()
+	{
+		Ecuacion ecuacion = new EcuacionLineal(0.0, -2.0);
+
+		IntegralDeArea integral = new IntegralDeArea();
+	
+		Double incremento = 0.01;
+		Double areaObtenida = integral.calcular(ecuacion, 0.0, 2.0, incremento);
+		
+		Double precision = 0.01;
+		Double areaEsperada = 4.00;
+		
+		assertEquals("Se espera que el Area bajo la recta identidad entre 0 y 2 sea 4",
+				areaEsperada, areaObtenida, precision);
+	}
 }

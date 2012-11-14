@@ -37,22 +37,7 @@ public class EcuacionPolinomica implements Ecuacion
 		//throw new RuntimeException("No implementado");
 	}
 	
-/**
-	Definimos una ArrayList
-	List<String> list = new ArrayList<String>();
-	
-	 Añadimos elementos
-	list.add("Andrea");
-	list.add("Amaya");
-	list.add("Julio");
 
-	 Obtenemos un Iterador y recorremos la lista.
-		el método hasNext() nos dice si hay más elementos y que el método .next() nos permite movernos al siguiente elemento.	
-	Iterator iter = list.iterator();
-	while (iter.hasNext())
-	  System.out.println(iter.next());
-	}	
-*/
 	/**
 	 * Devuelve el resultado de evaluar f(x)
 	 *
@@ -65,26 +50,12 @@ public class EcuacionPolinomica implements Ecuacion
 		
 		Double valorActual = 0.0;
 		
-		//System.out.println("Cantidad de elementos: "+coeficientes.size());
-		
-		//int exponente = coeficientes.size() - 1;	primer linea para recorrer al revez
-		
 		for(int i = 0; i < coeficientes.size(); i++)
 		{
 			valorActual = coeficientes.get(i);
 
-			//y = y + (valorActual * (Elevar(x, exponente)));	segunda linea
 			y = y + (valorActual * (Elevar(x, i)));
-			
-			//System.out.println("Iteracion numero: "+ i +" X:"+x+"  valor: "+ valorActual+" exponente:"+exponente+" y: "+ y);
-			
-			/*
-			for(int j = 0; j < i; j++)
-			{
-				y = y + (valorActual * x);
-			}
-			*/
-			//exponente--;	tercer linea
+
 		}
 
 		return y;

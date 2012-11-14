@@ -1,6 +1,5 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
-
 /**
  * Representa la abstracción del cálculo de la integral bajo
  * la curva proporcionada.
@@ -20,45 +19,48 @@ public class IntegralDeArea
 	 */
 	public Double calcular(Ecuacion ecuacion,Double inicio,Double fin,Double incremento)
 	{
-		Double areaIzq = 0.0;
-		Double areaDer = 0.0;
-		Double areaTotal = 0.0;
+		Double areaIzq = 0.00;
+		Double areaDer = 0.00;
+		Double areaTotal = 0.00;
 		
-		Double altura = 0.0;
+		Double anteAltura = 0.00;
 		
-		//System.out.println("Areaizq:"+ areaIzq+" AreaDer: "+areaDer+" total:"+areaTotal+" inicio:"+inicio+" fin:"+fin);
+		Double altura = 0.00;
 		
 		for(Double i = inicio; i < fin; i += incremento )
 		{
-			altura += ecuacion.resolver(i);
-			//areaIzq += ((ecuacion.resolver(i)) * incremento);	VIEJO
-			//System.out.println("Por IZQ bucle:"+i+" altura de Y:"+altura);
+			anteAltura = ecuacion.resolver(i);
+			
+			if(anteAltura < 0)
+			{
+				anteAltura *= -1;
+			}
+			
+			altura += anteAltura;
 		}
 		
 		areaIzq = altura * incremento;
-		//System.out.println("Area por la izq: "+areaIzq);
 		
-		altura = 0.0;
+		anteAltura = 0.00;
+		altura = 0.00;
 		
 		for(Double j = (inicio + incremento); j <= fin; j += incremento )
 		{
-			altura += ecuacion.resolver(j);
-			//System.out.println("Por DER bucle:"+j+" altura de Y:"+altura);
+			anteAltura = ecuacion.resolver(j);
+			
+			if(anteAltura < 0)
+			{
+				anteAltura *= -1;
+			}
+			
+			altura += anteAltura;
 		}
 		
 		areaDer = altura * incremento;
-		//System.out.println("Area por la der: "+areaDer);
 		
 		areaTotal = ((areaDer + areaIzq) / 2);
 		
-		if(areaTotal < 0)
-		{
-			areaTotal *= -1;
-		}
-
-		//System.out.println("Areaizq:"+ areaIzq+" AreaDer: "+areaDer+" total:"+areaTotal+" inicio:"+inicio+" fin:"+fin);
 		return areaTotal;
-		//throw new RuntimeException("No implementado");
 	}
 		
 	/*
