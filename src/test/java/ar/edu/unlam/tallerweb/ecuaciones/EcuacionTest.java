@@ -88,7 +88,7 @@ public class EcuacionTest
 		
 		Ecuacion polinomica = new EcuacionPolinomica(lista);
 		
-		//System.out.println("La altura del eje Y es "+ polinomica.resolver(6.0));
+		System.out.println("La altura del eje Y es "+ polinomica.resolver(6.0));
 		
 	}
 }

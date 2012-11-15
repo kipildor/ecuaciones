@@ -109,8 +109,8 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		Double incremento = 0.5;
 		Double areaObtenida = integral.calcular(ecuacion, 1.0, 3.0, incremento);
 		
-		Double precision = 0.01;
-		Double areaEsperada = 0.5;
+		//Double precision = 0.01;
+		//Double areaEsperada = 0.5;
 		
 		System.out.println("Las sumas de Riemann dan (cuadratica) : "+ areaObtenida);
 	}
@@ -130,8 +130,8 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		Double incremento = 0.4;
 		Double areaObtenida = integral.calcular(ecuacion, -1.0, 1.0, incremento);
 		
-		Double precision = 0.01;
-		Double areaEsperada = 0.5;
+		//Double precision = 0.01;
+		//Double areaEsperada = 0.5;
 		
 		System.out.println("Las sumas de Riemann dan (como polinomica): "+ areaObtenida);
 	}

@@ -5,7 +5,7 @@ package ar.edu.unlam.tallerweb.ecuaciones;
  * una incógnita
  *
  */
-public interface Ecuacion {
+interface Ecuacion {
 
 	/**
 	 * Devuelve el resultado de evaluar f(x)

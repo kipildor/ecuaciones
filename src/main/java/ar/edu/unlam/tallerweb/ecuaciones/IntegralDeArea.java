@@ -17,7 +17,8 @@ public class IntegralDeArea
 	 * @param incremento
 	 * @return el área bajo la curva
 	 */
-	public Double calcular(Ecuacion ecuacion,Double inicio,Double fin,Double incremento)
+	public Double calcular(Ecuacion ecuacion,Double inicio,
+							Double fin,Double incremento)
 	{
 		Double areaIzq = 0.00;
 		Double areaDer = 0.00;
@@ -44,7 +45,7 @@ public class IntegralDeArea
 		anteAltura = 0.00;
 		altura = 0.00;
 		
-		for(Double j = (inicio + incremento); j <= fin; j += incremento )
+		for(Double j=(inicio+incremento);j<=fin;j+=incremento)
 		{
 			anteAltura = ecuacion.resolver(j);
 			
@@ -55,27 +56,25 @@ public class IntegralDeArea
 			
 			altura += anteAltura;
 		}
-		
 		areaDer = altura * incremento;
 		
 		areaTotal = ((areaDer + areaIzq) / 2);
 		
 		return areaTotal;
 	}
-		
 	/*
-	public Double calcular(Ecuacion ecuacion, Double inicio, Double fin, int divisiones)
+	public Double calcular(Ecuacion ecuacion,Double inicio,
+							Double fin,int divisiones)
 	{
 		Double incremento = 0.0;
 		Double devolver = 0.0;
 		
 		incremento = ((fin - inicio) / divisiones);
 		
-		devolver = calcular(ecuacion, inicio, fin, incremento);
+		devolver=calcular(ecuacion, inicio, fin, incremento);
 		
 		return devolver;
 		//throw new RuntimeException("No implementado");
 	}
 	*/
-
 }
