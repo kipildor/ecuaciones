@@ -10,6 +10,22 @@ public class EcuacionLineal implements Ecuacion
 	private Double b = 0.0;
 	private Double y = 0.0;
 
+	public Double getM() {
+		return m;
+	}
+
+	public void setM(Double m) {
+		this.m = m;
+	}
+
+	public Double getB() {
+		return b;
+	}
+
+	public void setB(Double b) {
+		this.b = b;
+	}
+
 	/**
 	 * Constructor parametrizado
 	 *
