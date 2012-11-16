@@ -1,25 +1,9 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
 public class EcuacionLineal implements Ecuacion {
-	private Double m = 0.0;
-	private Double b = 0.0;
-	private Double y = 0.0;
-
-	public final Double getM() {
-		return m;
-	}
-
-	public final void setM(final Double m) {
-		this.m = m;
-	}
-
-	public final Double getB() {
-		return b;
-	}
-
-	public final void setB(final Double b) {
-		this.b = b;
-	}
+	private Double m = 0.00;
+	private Double b = 0.00;
+	private Double y = 0.00;
 
 	public EcuacionLineal(final Double m, final Double b) {
 		super();

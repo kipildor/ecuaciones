@@ -1,16 +1,16 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
 public class EcuacionCuadratica implements Ecuacion {
-	private Double a = 0.0;
-	private Double b = 0.0;
-	private Double c = 0.0;
-	private Double y = 0.0;
+	private Double a = 0.00;
+	private Double b = 0.00;
+	private Double c = 0.00;
+	private Double y = 0.00;
 
 	public final Double getA() {
 		return a;
 	}
 
-	public final void setA(Double a) {
+	public final void setA(final Double a) {
 		this.a = a;
 	}
 
@@ -18,7 +18,7 @@ public class EcuacionCuadratica implements Ecuacion {
 		return b;
 	}
 
-	public final void setB(Double b) {
+	public final void setB(final Double b) {
 		this.b = b;
 	}
 
@@ -26,7 +26,7 @@ public class EcuacionCuadratica implements Ecuacion {
 		return c;
 	}
 
-	public final void setC(Double c) {
+	public final void setC(final Double c) {
 		this.c = c;
 	}
 
@@ -47,12 +47,12 @@ public class EcuacionCuadratica implements Ecuacion {
 	}
 
 	/**
-	 * Devuelve el resultado de evaluar f(x)
+	 * Devuelve el resultado de evaluar f(x).
 	 *
 	 * @param x la variable
 	 *
 	 */
-	public final Double resolver(Double x) {
+	public final Double resolver(final Double x) {
 		y = ((a * (x * x)) + (b * x) + c);
 
 		return y;

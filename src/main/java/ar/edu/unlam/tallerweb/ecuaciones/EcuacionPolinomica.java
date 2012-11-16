@@ -11,9 +11,9 @@ import java.util.List;
 public class EcuacionPolinomica implements Ecuacion {
 	
 	private List<Double> coeficientes = new ArrayList<Double>();
-	private Double y = 0.0;
+	private Double y = 0.00;
 
-	/**
+	/**.
 	 * Constructor parametrizado
 	 *
 	 * @param coeficientes siendo coeficientes[0] el valor que
@@ -42,8 +42,8 @@ public class EcuacionPolinomica implements Ecuacion {
 	 *
 	 */
 	public final Double resolver(final Double x) {
-		y = 0.0;
-		Double valorActual = 0.0;
+		y = 0.00;
+		Double valorActual = 0.00;
 		for (int i = 0; i < coeficientes.size(); i++) {
 			valorActual = coeficientes.get(i);
 			y = y + (valorActual * (Elevar(x, i)));
@@ -52,10 +52,10 @@ public class EcuacionPolinomica implements Ecuacion {
 		return y;
 		//throw new RuntimeException("No implementado");
 	}
-	public Double Elevar(Double x, int exponente) {
-		Double resultado = 1.0;
+	public final Double Elevar(final Double x, final int exponente) {
+		Double resultado = 1.00;
 		for (int i = 0; i < exponente; i++) {
-			resultado = resultado * x; 
+		resultado = resultado * x; 
 		}
 		return resultado;
 	}

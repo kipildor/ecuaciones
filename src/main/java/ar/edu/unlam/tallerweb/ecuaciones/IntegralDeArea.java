@@ -16,8 +16,8 @@ public class IntegralDeArea {
 	 * @param incremento
 	 * @return el área bajo la curva
 	 */
-	public final Double calcular(final Ecuacion ecuacion,final Double inicio,
-							final Double fin,final Double incremento) {
+	public final Double calcular(final Ecuacion ecuacion, final Double inicio,
+							 final Double fin, final Double incremento) {
 		Double areaIzq = 0.00;
 		Double areaDer = 0.00;
 		Double areaTotal = 0.00;
@@ -25,23 +25,18 @@ public class IntegralDeArea {
 		Double altura = 0.00;
 		for (Double i = inicio; i < fin; i += incremento ) {
 			anteAltura = ecuacion.resolver(i);
-			if (anteAltura < 0)
-			{
+			if (anteAltura < 0.00)	{
 				anteAltura *= -1;
 			}
-			
 			altura += anteAltura;
 		}
-		
 		areaIzq = altura * incremento;
-		
 		anteAltura = 0.00;
 		altura = 0.00;
-		
-		for (Double j=(inicio+incremento);j<=fin;j+=incremento) {
+		for (Double j = (inicio + incremento); j <= fin; j += incremento) {
 			anteAltura = ecuacion.resolver(j);
-			if (anteAltura < 0) {
-				anteAltura *= -1;
+			if (anteAltura < 0.00) {
+				anteAltura *= -1.00;
 			}
 			altura += anteAltura;
 		}

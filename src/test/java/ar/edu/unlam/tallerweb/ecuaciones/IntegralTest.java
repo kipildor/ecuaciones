@@ -11,25 +11,20 @@ import org.junit.Test;
 /**
  * Agregue los tests que considere necesarios. Se proporciona un test a modo de
  * testigo.
- * 
  */
-public class IntegralTest
-{
+public class IntegralTest {
 	@Test
-	public void areaBajoLaIdentidad()
-	{
+	public void areaBajoLaIdentidad() {
 		Ecuacion ecuacion = new EcuacionLineal(1.0, 0.0);
-
 		IntegralDeArea integral = new IntegralDeArea();
 		Double incremento = 0.01;
-		Double areaObtenida = integral.calcular(ecuacion, 0.0, 1.0, incremento);
-
-		
+		Double areaObtenida;
+		areaObtenida=integral.calcular(ecuacion, 0.0, 1.0, incremento);
 		Double precision = 0.01;
 		Double areaEsperada = 0.5;
 		assertEquals(
-				"Se espera que el área bajo la recta identidad entre 0 y 1 sea 1/2",
-				areaEsperada, areaObtenida.doubleValue(), precision);
+		"Se espera que el área bajo la recta identidad entre 0 y 1 sea 1/2",
+		areaEsperada, areaObtenida.doubleValue(), precision);
 
 	}
 /*
@@ -58,24 +53,21 @@ assertEquals(
 areaEsperada, areaObtenida.doubleValue(), precision);
 
 }
-
 } 
  */
 	@Test
-	public void areaBajoLaIdentidad2()
+	public final void areaBajoLaIdentidad2()
 	{
 		Ecuacion ecuacion = new EcuacionLineal(1.0, 0.0);
 
 		IntegralDeArea integral = new IntegralDeArea();
-	
 		Double incremento = 0.5;
-		Double areaObtenida = integral.calcular(ecuacion, 0.0, 1.0, incremento);
-		
+		Double areaObtenida;
+		areaObtenida=integral.calcular(ecuacion, 0.0, 1.0, incremento);
 		Double precision = 0.01;
 		Double areaEsperada = 0.5;
-		
 		assertEquals("Se espera que el Area bajo la recta identidad entre 0 y 1 sea 1/2",
-				areaEsperada, areaObtenida, precision);
+		areaEsperada, areaObtenida, precision);
 	}
 /*	
 	@Test
@@ -100,39 +92,25 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 	}
 */	
 	@Test
-	public void areaBajoLaIdentidad3()
-	{
+	public final void areaBajoLaIdentidad3() {
 		Ecuacion ecuacion = new EcuacionCuadratica(0.5, 0.0, 0.0);
-
 		IntegralDeArea integral = new IntegralDeArea();
-	
 		Double incremento = 0.5;
-		Double areaObtenida = integral.calcular(ecuacion, 1.0, 3.0, incremento);
-		
-		//Double precision = 0.01;
-		//Double areaEsperada = 0.5;
-		
+		Double areaObtenida;
+		areaObtenida=integral.calcular(ecuacion, 1.0, 3.0, incremento);
 		System.out.println("Las sumas de Riemann dan (cuadratica) : "+ areaObtenida);
 	}
 
 	@Test
-	public void areaBajoLaIdentidad4()
-	{
+	public void areaBajoLaIdentidad4() {
 		List<Double> coeficientes = new ArrayList<Double>();
 		coeficientes.add(1.0);
 		coeficientes.add(0.0);
 		coeficientes.add(1.0);
-		
 		Ecuacion ecuacion = new EcuacionPolinomica(coeficientes);
-
 		IntegralDeArea integral = new IntegralDeArea();
-		
 		Double incremento = 0.4;
 		Double areaObtenida = integral.calcular(ecuacion, -1.0, 1.0, incremento);
-		
-		//Double precision = 0.01;
-		//Double areaEsperada = 0.5;
-		
 		System.out.println("Las sumas de Riemann dan (como polinomica): "+ areaObtenida);
 	}
 
