@@ -1,51 +1,44 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
-/**
- * Representa una ecuación cuadrática del tipo
- * f(x) = a × x^2 + b × x + c
- *
- */
-public class EcuacionCuadratica implements Ecuacion
-{
+public class EcuacionCuadratica implements Ecuacion {
 	private Double a = 0.0;
 	private Double b = 0.0;
 	private Double c = 0.0;
 	private Double y = 0.0;
 
-	public Double getA() {
+	public final Double getA() {
 		return a;
 	}
 
-	public void setA(Double a) {
+	public final void setA(Double a) {
 		this.a = a;
 	}
 
-	public Double getB() {
+	public final Double getB() {
 		return b;
 	}
 
-	public void setB(Double b) {
+	public final void setB(Double b) {
 		this.b = b;
 	}
 
-	public Double getC() {
+	public final Double getC() {
 		return c;
 	}
 
-	public void setC(Double c) {
+	public final void setC(Double c) {
 		this.c = c;
 	}
 
 	/**
-	 * Constructor parametrizado
+	 * Constructor parametrizado.
 	 *
 	 * @param a
 	 * @param b
 	 * @param c
 	 *
 	 */
-	public EcuacionCuadratica(Double a, Double b, Double c)
-	{
+	public EcuacionCuadratica(final Double a, final Double b, final Double c) {
 		super();
 		this.a = a;
 		this.b = b;
@@ -59,9 +52,8 @@ public class EcuacionCuadratica implements Ecuacion
 	 * @param x la variable
 	 *
 	 */
-	public Double resolver(Double x)
-	{
-		y = ((a * (x * x)) + (b *x) + c);
+	public final Double resolver(Double x) {
+		y = ((a * (x * x)) + (b * x) + c);
 
 		return y;
 		//throw new RuntimeException("No implementado");

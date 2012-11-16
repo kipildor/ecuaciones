@@ -1,54 +1,34 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
-/**
- * Representa una ecuación lineal del tipo f(x) = m × x + b
- *
- */
-public class EcuacionLineal implements Ecuacion
-{
+public class EcuacionLineal implements Ecuacion {
 	private Double m = 0.0;
 	private Double b = 0.0;
 	private Double y = 0.0;
 
-	public Double getM() {
+	public final Double getM() {
 		return m;
 	}
 
-	public void setM(Double m) {
+	public final void setM(final Double m) {
 		this.m = m;
 	}
 
-	public Double getB() {
+	public final Double getB() {
 		return b;
 	}
 
-	public void setB(Double b) {
+	public final void setB(final Double b) {
 		this.b = b;
 	}
 
-	/**
-	 * Constructor parametrizado
-	 *
-	 * @param m la pendiente
-	 * @param b la ordenada al orígen
-	 *
-	 */
-	public EcuacionLineal(Double m, Double b)
-	{
+	public EcuacionLineal(final Double m, final Double b) {
 		super();
 		this.m = m;
 		this.b = b;
 		//throw new RuntimeException("No implementado");
 	}
 
-	/**
-	 * Devuelve el resultado de evaluar f(x)
-	 *
-	 * @param x la variable
-	 *
-	 */
-	public Double resolver(Double x)
-	{
+	public final Double resolver(final Double x) {
 		y = ((m * x) + b);
 		// TODO Auto-generated method stub
 		return y;
