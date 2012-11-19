@@ -52,7 +52,7 @@ public class IntegralDeArea {
 			}
 			areaDer = altura * incremento;
 			areaTotal = ((areaDer + areaIzq) / 2);
-			areaTotal = redondeo(areaTotal);	//Redondeamos el resultado.
+			areaTotal = redondeo(areaTotal);
 			return areaTotal;
 		}
 	}
@@ -65,13 +65,13 @@ public class IntegralDeArea {
 		Double valorDeQuiebre = 0.005;
 		Double sumar = 0.01;
 		int areaEntera = 0;
-		areaDoble1 = areaObtenida * correrIzq; //muevo la coma hacia la izquierda
+		areaDoble1 = areaObtenida * correrIzq;
 		areaEntera = (int) areaDoble1;
-		areaDoble1 = areaEntera * correrDer; //muevo la coma hacia la derecha
+		areaDoble1 = areaEntera * correrDer;
 		areaDoble2 = areaObtenida - areaDoble1;
 		if (areaDoble2 >= valorDeQuiebre) {
 			areaObtenida = 0.0000;
-			areaObtenida = areaDoble1 + sumar; //sumo para redondear hacia arriba
+			areaObtenida = areaDoble1 + sumar;
 		}
 		return areaObtenida;
 	}

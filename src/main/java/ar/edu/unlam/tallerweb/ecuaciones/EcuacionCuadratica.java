@@ -37,7 +37,8 @@ public class EcuacionCuadratica implements Ecuacion {
 	 * @param c
 	 *
 	 */
-	public EcuacionCuadratica(final Double aa, final Double bb, final Double cc) {
+	public EcuacionCuadratica(final Double aa,
+			final Double bb, final Double cc) {
 		super();
 		this.a = aa;
 		this.b = bb;
