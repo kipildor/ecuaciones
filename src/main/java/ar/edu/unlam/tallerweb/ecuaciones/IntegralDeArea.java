@@ -60,18 +60,18 @@ public class IntegralDeArea {
 		Double areaObtenida = areaObtenidaa;
 		double areaDoble1 = 0.000;
 		Double areaDoble2 = 0.000;
-		Double CORRER_IZQ = 100.000;
-		Double CORRER_DER = 0.01;
-		Double VALOR_DE_QUIEBRE = 0.005;
-		Double SUMAR = 0.01;
+		final Double correr_izq = 100.000;
+		final Double correrDer = 0.01;
+		final Double valorDeQuiebre = 0.005;
+		final Double sumar = 0.01;
 		int areaEntera = 0;
-		areaDoble1 = areaObtenida * CORRER_IZQ;
+		areaDoble1 = areaObtenida * correr_izq;
 		areaEntera = (int) areaDoble1;
-		areaDoble1 = areaEntera * CORRER_DER;
+		areaDoble1 = areaEntera * correrDer;
 		areaDoble2 = areaObtenida - areaDoble1;
-		if (areaDoble2 >= VALOR_DE_QUIEBRE) {
+		if (areaDoble2 >= valorDeQuiebre) {
 			areaObtenida = 0.0000;
-			areaObtenida = areaDoble1 + SUMAR;
+			areaObtenida = areaDoble1 + sumar;
 		}
 		return areaObtenida;
 	}
