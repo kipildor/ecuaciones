@@ -1,7 +1,5 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
-import java.lang.Exception;
-import java.lang.RuntimeException;
 /**
  * Representa la abstracción del cálculo de la integral bajo
  * la curva proporcionada.
@@ -48,17 +46,15 @@ public class IntegralDeArea {
 		}
 		areaDer = altura * incremento;
 		areaTotal = ((areaDer + areaIzq) / 2);
-		areaTotal = redondeo(areaTotal) ;//Redondeamos el resultado.
+		areaTotal = redondeo(areaTotal);	//Redondeamos el resultado.
 		return areaTotal;
 	}
-	public static Double redondeo(Double areaObtenida)
-	{
+	public static Double redondeo(Double areaObtenida) {
 		double areaDoble1 = 0.000;
 		Double areaDoble2 = 0.000;
 		int areaEntera = 0;
-		
-		areaDoble1 = areaObtenida * 100;
-		areaEntera = (int)areaDoble1;
+		areaDoble1 = areaObtenida * 100.000;
+		areaEntera = (int) areaDoble1;
 		areaDoble1 = areaEntera * 0.01;
 		areaDoble2 = areaObtenida - areaDoble1;
 		

@@ -26,7 +26,7 @@ public class EcuacionPolinomica implements Ecuacion {
  * f(x) = 1 × x^0 + 0 × x^1 + 2 × x^2 + 1 × x^3 - 1 × x^4
  *
  */
-	public EcuacionPolinomica (final List<Double> coeficiente) {
+	public EcuacionPolinomica(final List<Double> coeficiente) {
 		super();
 		this.coeficientes = coeficiente;
 		//throw new RuntimeException("No implementado");
@@ -37,7 +37,7 @@ public class EcuacionPolinomica implements Ecuacion {
 	 * @param x la variable
 	 *
 	 */
-	public final Double resolver (final Double x) {
+	public final Double resolver(final Double x) {
 		y = 0.00;
 		Double valorActual = 0.00;
 		for (int i = 0; i < coeficientes.size(); i++) {
@@ -47,10 +47,10 @@ public class EcuacionPolinomica implements Ecuacion {
 		return y;
 		//throw new RuntimeException("No implementado");
 	}
-	public final Double elevar (final Double x, final int exponente) {
+	public final Double elevar(final Double x, final int exponente) {
 		Double resultado = 1.00;
 		for (int i = 0; i < exponente; i++) {
-		resultado = resultado * x; 
+			resultado = resultado * x;
 		}
 		return resultado;
 	}

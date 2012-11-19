@@ -10,24 +10,24 @@ public class EcuacionCuadratica implements Ecuacion {
 		return a;
 	}
 
-	public final void setA(final Double a) {
-		this.a = a;
+	public final void setA(final Double aa) {
+		this.a = aa;
 	}
 
 	public final Double getB() {
 		return b;
 	}
 
-	public final void setB(final Double b) {
-		this.b = b;
+	public final void setB(final Double bb) {
+		this.b = bb;
 	}
 
 	public final Double getC() {
 		return c;
 	}
 
-	public final void setC(final Double c) {
-		this.c = c;
+	public final void setC(final Double cc) {
+		this.c = cc;
 	}
 	/**
 	 * Constructor parametrizado.
@@ -37,11 +37,11 @@ public class EcuacionCuadratica implements Ecuacion {
 	 * @param c
 	 *
 	 */
-	public EcuacionCuadratica(final Double a, final Double b, final Double c) {
+	public EcuacionCuadratica(final Double aa, final Double bb, final Double cc) {
 		super();
-		this.a = a;
-		this.b = b;
-		this.c = c;
+		this.a = aa;
+		this.b = bb;
+		this.c = cc;
 	}
 	/**
 	 * Devuelve el resultado de evaluar f(x).
