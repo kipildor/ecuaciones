@@ -91,4 +91,23 @@ public class EcuacionTest
 		System.out.println("La altura del eje Y es "+ polinomica.resolver(6.0));
 		
 	}
+	
+	@Test
+	public void calcularEcuacionCuadratica3()
+	{
+		Double a = 2.0;
+		Double b = 3.0;
+		Double c = 1.0;
+		
+		Ecuacion cuadratica = new EcuacionCuadratica(a, b, c);
+		
+		Double punto = 2.0;
+		puntoObtenido= cuadratica.resolver(punto);
+		Double precision = 0.01;
+		Double puntoEsperado = 15.0;
+		
+		assertEquals("Se espera que dado x="+ punto +" y la funcion "+ a +"x^2 + ("+ b +")x + ("+ c +") sea Y="+ puntoObtenido +".  ",
+				puntoEsperado, puntoObtenido, precision);
+		System.out.println("La altura del eje Y es "+ puntoObtenido);
+	}
 }

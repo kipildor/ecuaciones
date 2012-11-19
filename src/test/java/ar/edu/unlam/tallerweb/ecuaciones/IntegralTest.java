@@ -274,4 +274,15 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		assertEquals("Se espera que el valor del area sea igual a 0.5 ",
 			areaObtenida, areaEsperada, precision);
 	}
+	/*
+	@Test
+	public final void areaBajoLaIdentidad11() {
+		Ecuacion ecuacion = new EcuacionCuadratica(2.0, 3.0, 1.0);
+		IntegralDeArea integral = new IntegralDeArea();
+		Double incremento = 0.1;
+		Double areaObtenida;
+		areaObtenida=integral.calcular(ecuacion, 2.0, -2.0, incremento);
+		System.out.println("Las sumas de Riemann dan (cuadratica) : "+ areaObtenida);
+	}
+	*/
 }
