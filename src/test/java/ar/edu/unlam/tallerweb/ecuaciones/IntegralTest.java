@@ -212,4 +212,43 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		assertEquals("Se espera que el Area bajo la recta identidad entre 0 y 2 sea 4",
 				areaEsperada, areaObtenida, precision);
 	}
+	
+	@Test
+	public void rangoInvertido1()
+	{
+		Ecuacion lineal = new EcuacionLineal(1.0, -1.0);
+		
+		IntegralDeArea integral = new IntegralDeArea();
+		
+		Double incremento = 0.01;
+		Double areaObtenida = integral.calcular(lineal, 2.00, 1.00, incremento);
+		//Double precision = 0.01;
+		
+		System.out.println("El area es: "+ areaObtenida);
+		//assertEquals("Se espera que el valor del area sea igual a 1 ",
+			//areaObtenida, 1.00, precision);
+	}
+	@Test
+	public void areaBajoLaIdentidad9()
+	{
+		List<Double> coeficientes = new ArrayList<Double>();
+		
+		coeficientes.add(0.0);
+		coeficientes.add(0.0);
+		coeficientes.add(0.0);
+		coeficientes.add(1.0);
+		
+		Ecuacion poli = new EcuacionPolinomica(coeficientes);
+		
+		IntegralDeArea integral = new IntegralDeArea();
+		
+		Double incremento = 0.01;
+		Double areaObtenida = integral.calcular(poli, 0.00, 1.00, incremento);
+		Double precision = 0.01;
+		Double areaEsperada = 0.25;
+		
+		System.out.println("El area es: "+ areaObtenida);
+		assertEquals("Se espera que el valor del area sea igual a 0.25 ",
+			areaObtenida, areaEsperada, precision);
+	}
 }
