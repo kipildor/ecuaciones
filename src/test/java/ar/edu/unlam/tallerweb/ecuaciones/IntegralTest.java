@@ -251,4 +251,27 @@ areaEsperada, areaObtenida.doubleValue(), precision);
 		assertEquals("Se espera que el valor del area sea igual a 0.25 ",
 			areaObtenida, areaEsperada, precision);
 	}
+	@Test
+	public void areaBajoLaIdentidad10()
+	{
+		List<Double> coeficientes = new ArrayList<Double>();
+		
+		coeficientes.add(0.0);
+		coeficientes.add(0.0);
+		coeficientes.add(0.0);
+		coeficientes.add(1.0);
+		
+		Ecuacion poli = new EcuacionPolinomica(coeficientes);
+		
+		IntegralDeArea integral = new IntegralDeArea();
+		
+		Double incremento = 0.01;
+		Double areaObtenida = integral.calcular(poli, -1.00, 1.00, incremento);
+		Double precision = 0.01;
+		Double areaEsperada = 0.5;
+		
+		System.out.println("El area es: "+ areaObtenida);
+		assertEquals("Se espera que el valor del area sea igual a 0.5 ",
+			areaObtenida, areaEsperada, precision);
+	}
 }

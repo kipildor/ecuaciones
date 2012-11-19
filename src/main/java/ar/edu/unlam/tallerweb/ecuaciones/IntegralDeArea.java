@@ -1,11 +1,10 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
-
 /**
  * Representa la abstracción del cálculo de la integral bajo
  * la curva proporcionada.
  *
  */
-public class IntegralDeArea {
+public class IntegralDeArea{
 	/**
 	 * Calcula el área bajo la curva, utilizando el método de las sumas
 	 * de Riemann entre los dos puntos dados.
@@ -16,28 +15,20 @@ public class IntegralDeArea {
 	 * @param incremento
 	 * @return el área bajo la curva
 	 */
-	public final Double calcular
-	(final Ecuacion ecuacion, 
-	 final Double inicio, final Double fin, 
-	 final Double incremento) {
-		if (inicio > fin) {
-			throw new RuntimeException("Rango invalido");}
-		else {
+	public final Double calcular(final Ecuacion ecuacion, final Double inicio, final Double fin, final Double incremento){
 		Double areaIzq = 0.00;
 		Double areaDer = 0.00;
 		Double areaTotal = 0.00;
 		Double anteAltura = 0.00;
 		Double altura = 0.00;
-	/*	
 		try{
-			
-		}catch(TestRango e){
-			System.out.println("El rango es invalido");
-		}
-		*/
-		for (Double i = inicio; i < fin; i += incremento) {
+			rango(inicio, fin);
+		}catch(ExcepcionIntervalo ex){
+			System.out.println(ex.getMessage());
+        }
+		for (Double i = inicio; i < fin; i += incremento){
 			anteAltura = ecuacion.resolver(i);
-			if (anteAltura < 0.00)	{
+			if (anteAltura < 0.00){
 				anteAltura *= -1;
 			}
 			altura += anteAltura;
@@ -45,22 +36,19 @@ public class IntegralDeArea {
 		areaIzq = altura * incremento;
 		anteAltura = 0.00;
 		altura = 0.00;
-		for (Double j = (inicio + incremento); j <= fin; j += incremento) {
+		for (Double j = (inicio + incremento); j <= fin; j += incremento){
 			anteAltura = ecuacion.resolver(j);
-			if (anteAltura < 0.00) {
+			if (anteAltura < 0.00){
 				anteAltura *= -1.00;
 			}
 			altura += anteAltura;
 		}
 		areaDer = altura * incremento;
 		areaTotal = ((areaDer + areaIzq) / 2);
-		
-		areaTotal = Redondeo(areaTotal);//Redondeamos el resultado.
+		areaTotal = redondeo(areaTotal);//Redondeamos el resultado.
 		return areaTotal;
-		}
 	}
-	
-	public static Double Redondeo(Double areaObtenida)
+	public static Double redondeo(Double areaObtenida)
 	{
 		double areaDoble1 = 0.000;
 		Double areaDoble2 = 0.000;
@@ -77,21 +65,9 @@ public class IntegralDeArea {
 		}
 		return areaObtenida;
 	}
-	/*
-	public static boolean RangoValido(final Double inicio, final Double fin) {
-		throws TestRango {
-			if (inicio > fin) {
-				throw new RangoInvertido();
-			}
+	public static void rango (Double inicio, Double fin)throws ExcepcionIntervalo{
+		if(inicio > fin){
+			throw new ExcepcionIntervalo("El rango esta invertido");
 		}
-	}*/
-}/*
-public EcuacionLineal(Double m, Double b) {
-if ((m == null) || (b == null)) {
-throw new RuntimeException("No implementado");
-} else {
-this.m = m;
-this.b = b;
+	}
 }
-}
-*/
