@@ -1,7 +1,5 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
-import org.hamcrest.CoreMatchers;
-
 /**
  * Representa la abstracción del cálculo de la integral bajo
  * la curva proporcionada.
