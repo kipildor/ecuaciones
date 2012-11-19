@@ -16,8 +16,10 @@ public class IntegralDeArea {
 	 * @param incremento
 	 * @return el área bajo la curva
 	 */
-	public final Double calcular(final Ecuacion ecuacion, final Double inicio, final Double fin, final Double incremento) {
-		if(inicio > fin) {
+	public final Double calcular(final Ecuacion ecuacion,
+			final Double inicio, final Double fin,
+			final Double incremento) {
+		if (inicio > fin) {
 			 throw new RuntimeException("Rango invalido");
 		} else {
 			Double areaIzq = 0.00;
@@ -40,7 +42,8 @@ public class IntegralDeArea {
 			areaIzq = altura * incremento;
 			anteAltura = 0.00;
 			altura = 0.00;
-			for (Double j = (inicio + incremento); j <= fin; j += incremento) {
+			for (Double j = (inicio + incremento);
+					j <= fin; j += incremento) {
 				anteAltura = ecuacion.resolver(j);
 				if (anteAltura < 0.00) {
 					anteAltura *= -1.00;
@@ -66,14 +69,15 @@ public class IntegralDeArea {
 		areaEntera = (int) areaDoble1;
 		areaDoble1 = areaEntera * correrDer; //muevo la coma hacia la derecha
 		areaDoble2 = areaObtenida - areaDoble1;
-		if(areaDoble2 >= valorDeQuiebre) {
+		if (areaDoble2 >= valorDeQuiebre) {
 			areaObtenida = 0.0000;
 			areaObtenida = areaDoble1 + sumar; //sumo para redondear hacia arriba
 		}
 		return areaObtenida;
 	}
-	public static void rango (final Double inicio, final Double fin)throws ExcepcionIntervalo {
-		if(inicio > fin) {
+	public static void rango(final Double inicio,
+			final Double fin)throws ExcepcionIntervalo {
+		if (inicio > fin) {
 			throw new ExcepcionIntervalo("El rango esta invertido");
 		}
 	}
