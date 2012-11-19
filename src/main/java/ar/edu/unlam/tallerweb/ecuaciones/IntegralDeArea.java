@@ -60,12 +60,12 @@ public class IntegralDeArea {
 		Double areaObtenida = areaObtenidaa;
 		double areaDoble1 = 0.000;
 		Double areaDoble2 = 0.000;
-		final Double correr_izq = 100.000;
+		final Double correrIzq = 100.000;
 		final Double correrDer = 0.01;
 		final Double valorDeQuiebre = 0.005;
 		final Double sumar = 0.01;
 		int areaEntera = 0;
-		areaDoble1 = areaObtenida * correr_izq;
+		areaDoble1 = areaObtenida * correrIzq;
 		areaEntera = (int) areaDoble1;
 		areaDoble1 = areaEntera * correrDer;
 		areaDoble2 = areaObtenida - areaDoble1;
